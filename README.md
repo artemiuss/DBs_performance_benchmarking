@@ -1,9 +1,8 @@
 # Distributed Algorithms & Data Structures Homework: DBs performance benchmarking
 
-- setup testing env
-- prepare and describe testing scenarios
-- create testing app
-- prepare test data
-- perform benchmarks in different configurations (default/majority read-write resp, …)
-- analyze results
-
+- Setup testing env
+- Prepare and describe testing scenarios
+- Create a testing app
+- Prepare test data
+- Perform benchmarks in different configurations (default/majority read-write resp, …)
+- Analyze results

@@ -7,7 +7,12 @@ This performance benchmarking compares the following DBMSs:
 
 The DBMSs were running in docker containers using official images.
 
-The test was performed on machine with 8 CPU cores, 32GB RAM, SSD drive using Ubuntu 22.04.
+The test was performed on machine with 8 CPU cores, 32GB RAM, SSD drive using Ubuntu 22.04 using Python 3.11.3 and the following libraries:
+```
+psycopg2==2.9.6
+pymongo==4.4.1
+mysql-connector-python==8.1.0
+```
 
 The test consists of the following parts:
 - Setup testing env
@@ -29,6 +34,7 @@ docker compose up -d
 
 To prepare the testing env run the following command:
 ```sh
+pip install -r requirements.txt
 ./setup_tests.py
 ```
 
@@ -37,7 +43,7 @@ To prepare the testing env run the following command:
 #### PostgreSQL
 
 ```sql
-CREATE TABLE plants (
+CREATE TABLE test (
   id       SERIAL NOT NULL PRIMARY KEY,
   json_doc JSONB NOT NULL
 );
@@ -49,15 +55,16 @@ It has been decided to uses the JSONB since:
 #### MySQL
 
 ```sql
-CREATE TABLE plants (
+CREATE TABLE test (
   id       INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
   json_doc JSON NOT NULL
 );
 ```
 
 #### MongoDB
-...
-
+```js
+db.createCollection('test')
+```
 
 
 ## Prepare and describe testing scenarios

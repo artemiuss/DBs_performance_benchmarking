@@ -22,7 +22,9 @@ def setup_mysql():
     cnx.close()
 
 def setup_mongo():
-    """db.createCollection('test')"""
+    client = MongoClient('mongodb://localhost:27018/')
+    db = client['test']
+    collection = db['test']
 
 def main():
     setup_pg()

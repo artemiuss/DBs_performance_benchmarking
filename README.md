@@ -43,10 +43,8 @@ pip install -r requirements.txt
 #### PostgreSQL
 
 ```sql
-CREATE TABLE test (
-  id       SERIAL NOT NULL PRIMARY KEY,
-  json_doc JSONB NOT NULL
-);
+CREATE TABLE IF NOT EXISTS usertable(data JSONB);
+CREATE UNIQUE INDEX IF NOT EXISTS usertable_data_idx ON usertable ((data->>'YCSB_KEY'));
 ```
 
 It has been decided to uses the JSONB since:
@@ -55,9 +53,9 @@ It has been decided to uses the JSONB since:
 #### MySQL
 
 ```sql
-CREATE TABLE test (
-  id       INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  json_doc JSON NOT NULL
+CREATE TABLE test.usertable (
+    data json,
+    ycsb_key varchar(255) GENERATED ALWAYS AS (JSON_EXTRACT(data, '$.YCSB_KEY')) STORED PRIMARY KEY
 );
 ```
 
@@ -65,7 +63,6 @@ CREATE TABLE test (
 ```js
 db.createCollection('test')
 ```
-
 
 ## Prepare and describe testing scenarios
 ...

@@ -38,6 +38,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: test
+      MONGO_INITDB_DATABASE: test
     restart: always
     ports:
     - 27018:27017

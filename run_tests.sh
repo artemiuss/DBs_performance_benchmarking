@@ -14,6 +14,8 @@ declare -a THREADS=(1)
 
 WORKLOAD=$1
 YCSB_HOME="YCSB"
+DTIME_FORMAT="%Y-%m-%d-%H-%M-%S"
+DATE_TS="$(date +"${DTIME_FORMAT}")"
 
 for THREAD in "${THREADS[@]}"
 do
@@ -22,7 +24,7 @@ do
     for i in $(seq 1 $EXPERIMENTS)
     do
         echo "Run ${i} experiment"
-        
+
         # start containers
         docker compose up -d
 
@@ -38,19 +40,23 @@ do
         # set benchmark params
         YCSB_PARAMS=(-p "${RECORDCOUNT}"=1000 -p "${OPERATIONCOUNT}"=100 -threads "${THREAD}")
 
+        # create result dir
+        RESULT_DIR="../${WORKLOAD}_threads_${THREAD}_${DATE_TS}"
+        mkdir "${RESULT_DIR}"
+        
         #run mysql benchmark
         DB="mysql"
         bin/ycsb load mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
             -cp mysql-connector-j-8.1.0.jar \
             -p db.driver=com.mysql.cj.jdbc.Driver \
             -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+            > "${RESULT_DIR}/load_${DB}"
 
         bin/ycsb run mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
             -cp mysql-connector-j-8.1.0.jar \
             -p db.driver=com.mysql.cj.jdbc.Driver \
             -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
+            > "${RESULT_DIR}/run_${DB}"
 
         #run pg benchmark
         DB="postgresql"
@@ -58,22 +64,23 @@ do
             -cp postgresql-42.6.0.jar \
             -p db.driver=org.postgresql.Driver \
             -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+            > "${RESULT_DIR}/load_${DB}"
 
         bin/ycsb run pgjsonb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
             -cp postgresql-42.6.0.jar \
             -p db.driver=org.postgresql.Driver \
             -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
+            > "${RESULT_DIR}/run_${DB}"
 
         #run mongo benchmark
         DB="mongodb"
         bin/ycsb load mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
             -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true" \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+            > "${RESULT_DIR}/load_${DB}"
+
         bin/ycsb run mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
             -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true" \
-            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
+            > "${RESULT_DIR}/run_${DB}"
         
         cd ..
 

@@ -41,9 +41,9 @@ do
         YCSB_PARAMS=(-p "${RECORDCOUNT}"=1000 -p "${OPERATIONCOUNT}"=100 -threads "${THREAD}")
 
         # create result dir
-        RESULT_DIR="../${WORKLOAD}_threads_${THREAD}_${DATE_TS}"
-        mkdir "${RESULT_DIR}"
-        
+        RESULT_DIR="../benchmark_results/${WORKLOAD}_threads_${THREAD}_${DATE_TS}"
+        mkdir -p "${RESULT_DIR}"
+
         #run mysql benchmark
         DB="mysql"
         bin/ycsb load mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \

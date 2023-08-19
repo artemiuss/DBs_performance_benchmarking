@@ -1,3 +1,5 @@
-psycopg2==2.9.6
-pymongo==4.4.1
-mysql-connector-python==8.1.0
+toolz
+statistics
+scipy
+matplotlib
+numpy

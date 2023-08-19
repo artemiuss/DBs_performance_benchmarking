@@ -74,7 +74,9 @@ docker compose build
 ...
 ### Run tests
 ```sh
-./run_tests.sh
+./run_tests.sh workloada
+./run_tests.sh workloadb
+./run_tests.sh workloadc
 ```
 
 ## Analyze results

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# create structures
-mysql --host="127.0.0.1" --port="3307" --user="root" -proot test < mysql_init.sql
-export PGPASSWORD="test"; psql -h "127.0.0.1" -p 5433 -d test -U test < pg_init.sql
-
 # get ycsb fork
 git clone https://github.com/artemiuss/YCSB
 cd YCSB

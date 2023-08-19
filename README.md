@@ -9,7 +9,13 @@ The DBMSs were running in docker containers using official images. *So this is a
 
 The test was performed on the host with 8 CPU cores, 32GB RAM, SSD drive using Ubuntu 22.04.
 
-For this benchmark I've forked the [YCSB](https://github.com/brianfrankcooper/YCSB) tool by adding support for PostgreSQL (jsonb) and MySQL (binary json).
+For this benchmark I've forked the [YCSB](https://github.com/brianfrankcooper/YCSB) tool by adding support for PostgreSQL (jsonb) and MySQL (binary json). YCSB settings used:
+- `recordcount=1000000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
+- `operationcount=1000000` -- the number of operations to perform in the workload
+- `workload` -- workload class:
+  - Workload A: Update heavy workload
+  - Workload B: Read mostly workload
+  - Workload C: Read only
 
 Data structures used in the benchmark:
 
@@ -40,14 +46,6 @@ Data structures used in the benchmark:
     ```
 
 
-The test consists of the following parts:
-- Setup testing env
-- Prepare and describe testing scenarios
-- Create a testing app
-- Prepare test data
-- Perform benchmarks in different configurations (default/majority read-write resp, …)
-- Analyze results
-
 ## Setup testing env
 
 The testing DB instances have been defined in the `docker-compose.yml` file.
@@ -59,19 +57,13 @@ pip install -r requirements.txt
 docker compose build
 ```
 
-
-
 ## Prepare and describe testing scenarios
 ...
 
-## Create a testing app
-...
-
-## Prepare test data
-...
 
 ## Perform benchmarks in different configurations (default/majority read-write resp, …)
 ...
+
 ### Run tests
 ```sh
 ./run_tests.sh workloada

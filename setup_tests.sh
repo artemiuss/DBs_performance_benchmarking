@@ -17,6 +17,3 @@ rm -r mysql-connector-j-8.1.0.tar.gz mysql-connector-j-8.1.0
 
 # get postgresql jdbc driver
 curl -O --location https://jdbc.postgresql.org/download/postgresql-42.6.0.jar
-
-
-

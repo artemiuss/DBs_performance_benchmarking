@@ -3,17 +3,21 @@
 set -eu
 
 #EXPERIMENTS=3
+#RECORDCOUNT=1000000
+#OPERATIONCOUNT=1000000
 #declare -a THREADS=(1 10 20 30 40 50 60 70 80 90 100)
-#YCSB_PARAMS=(-p recordcount=1000000 -p operationcount=1000000)
+
 EXPERIMENTS=1
+RECORDCOUNT=1000
+OPERATIONCOUNT=100
 declare -a THREADS=(1)
-YCSB_PARAMS=(-p recordcount=1000 -p operationcount=100)
+
 WORKLOAD=$1
 YCSB_HOME="YCSB"
 
-for thread in "${THREADS[@]}"
+for THREAD in "${THREADS[@]}"
 do
-    echo "Run experiments for ${thread} threads"
+    echo "Run experiments for ${THREAD} threads"
 
     for i in $(seq 1 $EXPERIMENTS)
     do
@@ -31,17 +35,45 @@ do
 
         cd "${YCSB_HOME}"
 
+        # set benchmark params
+        YCSB_PARAMS=(-p "${RECORDCOUNT}"=1000 -p "${OPERATIONCOUNT}"=100 -threads "${THREAD}")
+
         #run mysql benchmark
-        bin/ycsb load mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -cp mysql-connector-j-8.1.0.jar -p db.driver=com.mysql.cj.jdbc.Driver -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root
-        bin/ycsb run mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -cp mysql-connector-j-8.1.0.jar -p db.driver=com.mysql.cj.jdbc.Driver -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root
+        DB="mysql"
+        bin/ycsb load mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -cp mysql-connector-j-8.1.0.jar \
+            -p db.driver=com.mysql.cj.jdbc.Driver \
+            -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+
+        bin/ycsb run mysqljson -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -cp mysql-connector-j-8.1.0.jar \
+            -p db.driver=com.mysql.cj.jdbc.Driver \
+            -p db.url=jdbc:mysql://localhost:3307/test -p db.user=root -p db.passwd=root \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
 
         #run pg benchmark
-        bin/ycsb load pgjsonb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -cp postgresql-42.6.0.jar -p db.driver=org.postgresql.Driver -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test
-        bin/ycsb run pgjsonb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -cp postgresql-42.6.0.jar -p db.driver=org.postgresql.Driver -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test
+        DB="postgresql"
+        bin/ycsb load pgjsonb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -cp postgresql-42.6.0.jar \
+            -p db.driver=org.postgresql.Driver \
+            -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+
+        bin/ycsb run pgjsonb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -cp postgresql-42.6.0.jar \
+            -p db.driver=org.postgresql.Driver \
+            -p db.url=jdbc:postgresql://localhost:5433/test -p db.user=test -p db.passwd=test \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
 
         #run mongo benchmark
-        bin/ycsb load mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true"
-        bin/ycsb run mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true"
+        DB="mongodb"
+        bin/ycsb load mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true" \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/load_${DB}"
+        bin/ycsb run mongodb -P "workloads/${WORKLOAD}" "${YCSB_PARAMS[@]}" \
+            -p mongodb.url="mongodb://root:test@localhost:27018" -p mongodb.auth="true" \
+            > "./${WORKLOAD}_threads_${THREAD}_${DATE_TS}/run_${DB}"
         
         cd ..
 

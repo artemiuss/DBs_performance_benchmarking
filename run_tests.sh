@@ -14,8 +14,6 @@ declare -a THREADS=(1)
 
 WORKLOAD=$1
 YCSB_HOME="YCSB"
-DTIME_FORMAT="%Y-%m-%d-%H-%M-%S"
-DATE_TS="$(date +"${DTIME_FORMAT}")"
 
 for THREAD in "${THREADS[@]}"
 do
@@ -41,7 +39,7 @@ do
         YCSB_PARAMS=(-p "${RECORDCOUNT}"=1000 -p "${OPERATIONCOUNT}"=100 -threads "${THREAD}")
 
         # create result dir
-        RESULT_DIR="../benchmark_results/${WORKLOAD}_threads_${THREAD}_${DATE_TS}"
+        RESULT_DIR="../benchmark_results/${WORKLOAD}_threads_${THREAD}"
         mkdir -p "${RESULT_DIR}"
 
         #run mysql benchmark

@@ -13,25 +13,24 @@ workload_list = [
     {"name":"Workload C: Read only", "alias":"workloadc"}
 ]
 
+#thread_list = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+thread_list = [1]
+
 for workload in workload_list:
-    report_file_name = f'report_{workload["alias"]}'
+    for stage in ["load", "run"]:
+        report_file_name = f'report_{workload["alias"]}_{stage}'
 
-    threads = list(range(0, 100))
-    throughput = list(range(100, 200))
-    latency99 = list(range(0, 100))
+        plt.title(f'Throughput (ops/sec)\n depending on number of threads')
+        for db in db_list:
+            throughput_list = []
+            for thread in thread_list:
+                with open(f'benchmark_results/{workload["alias"]}_threads_{thread}/{stage}_{db["alias"]}', 'r') as file:
+                    content = file.read()
 
-    plt.subplot(2, 1, 1)
-    plt.title(f'Throughput and 99th Percentile Latency\n depending on number of threads')
-    for db in db_list:
-        plt.plot(threads, throughput, label = db["name"])
-    plt.ylabel('Throughput, ops/sec')
-    plt.legend()
+                throughput_list.append(10)
 
-    plt.subplot(2, 1, 2)
-    for db in db_list:
-        plt.plot(threads, latency99, label = db["name"])
-    plt.ylabel('99th Percentile Latency, us')
-    plt.xlabel('Threads, number')
-    plt.legend()
+            plt.plot(thread_list, throughput_list, label = db["name"])
+        plt.ylabel('Throughput, ops/sec')
+        plt.legend()
+        plt.savefig(f"report_output/{report_file_name}.png")
 
-    plt.savefig(f"report_output/{report_file_name}.png")

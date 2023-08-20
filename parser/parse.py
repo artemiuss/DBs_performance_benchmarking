@@ -4,7 +4,6 @@ import sys
 import glob
 import json
 import logging
-import itertools
 import toolz
 import statistics
 
@@ -18,8 +17,7 @@ import numpy as np
 from scipy.interpolate import interp1d
 
 from parser import Parser
-from base import (FailedExperiment, MetricNotFound, RESULT_PATTERN,
-                  MetricData, PlotNames, Databases)
+from base import (FailedExperiment, MetricNotFound, RESULT_PATTERN, MetricData, PlotNames, Databases)
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +29,7 @@ def compare_result_file(file_name):
         logger.error(f"Cannot find threads in file {file_name}")
 
 def thread_info(threads, db, stage, metric):
-    PATH = "workload?_threads_{}_*/*/{}_{}"
+    PATH = "benchmark_results/workload?_threads_{}_*/{}_{}"
 
     def _get_metric(data):
         return getattr(Parser, metric)(data)
@@ -40,9 +38,7 @@ def thread_info(threads, db, stage, metric):
         try:
             return _get_metric(data)
         except FailedExperiment:
-            logger.error(f"Experiment for {db} with {threads} threads " +
-                         f"from {file_name} is failed")
-
+            logger.error(f"Experiment for {db} with {threads} threads " + f"from {file_name} is failed")
             return 0
 
         except MetricNotFound:
@@ -57,7 +53,7 @@ def thread_info(threads, db, stage, metric):
 
     def get_median_metric(thread, file_names):
         data_list = [
-            (file_name, json.loads(open(file_name).read()))
+            (file_name, open(file_name).read())
             for file_name in file_names
         ]
 
@@ -93,10 +89,6 @@ def main(db, stage, metric, threads=None):
             MetricData(metric, mongodb_metric_values, Databases.MONGO.value),
         ]
 
-def print_metrics(metrics):
-    for metric in metrics:
-        print(f"{metric.name} {metric.db} {metric.values}")
-
 def get_metric_option(metric):
     return "_".join(metric.name.split("_")[2:])
 
@@ -111,9 +103,17 @@ def plot_metrics(metrics):
     plt.savefig(f"{metric.db}_{metric.name}.png")
 
 def interpolate_metric(metric):
-    interpolated_x = np.linspace(1, 100, 100)
     original_x = [1] + list(range(10, 110, 10))
-    return (interpolated_x, interp1d(original_x, metric.values, interpolated_x))
+    interpolated_x = np.linspace(1, 100, 100)
+
+    print(f"Original x: {original_x}")
+    print(f"Original y: {metric.values}")
+    print(f"Interpolated x: {interpolated_x}")
+
+    return (interpolated_x,
+            #spline(original_x, metric.values, interpolated_x)
+            interp1d(original_x, metric.values, kind="cubic", fill_value=0, bounds_error=False)(interpolated_x)
+            )
 
 def prepare_plot(plot_name):
     ax = plt.subplot()
@@ -127,16 +127,14 @@ def plot_values(ax, ox, oy, db):
 
 if __name__ == "__main__":
     args = iter(sys.argv[1:])
-    db = next(args, None)
-    stage = next(args, None)
-    metric = next(args, None)
+    db = "mysql" #next(args, None)
+    stage = "load" #next(args, None)
+    metric = "MinLatency" #next(args, None)
     threads = next(args, None)
-    plot = bool(os.environ.get("PLOT", 0))
+
+    print(f"db: {db}, stage: {stage}, metric: {metric}, threads: {threads}")
 
     if os.environ.get("DEBUG"):
         logger.setLevel(os.environ.get("LOG_LEVEL", logging.INFO))
 
-    if plot:
-        plot_metrics(main(db, stage, metric, threads))
-    else:
-        print_metrics(main(db, stage, metric, threads))
+    plot_metrics(main(db, stage, metric, threads))

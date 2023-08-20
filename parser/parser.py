@@ -9,12 +9,12 @@ class Parser():
     @classmethod
     def get_metric(cls, operation, metric):
         def process(data):
-            if FAILED in data["stdout"]:
+            if FAILED in data:
                 raise FailedExperiment()
 
             line = next(filter(
                 cls.is_type(operation, metric),
-                (row for row in data["stdout_lines"])
+                (row for row in data)
             ), "")
 
             if not line:

@@ -6,6 +6,7 @@ RECORDCOUNT=10000
 OPERATIONCOUNT=10000
 declare -a WORKLOADS=("workloada" "workloadb" "workloadc")
 declare -a THREADS=(1 2 3 4 5 6 7 8 9 10)
+#declare -a THREADS=(1 5 10 20 30 40 50 60 70 80 90 100)
 YCSB_HOME="YCSB"
 
 for WORKLOAD in "${WORKLOADS[@]}"

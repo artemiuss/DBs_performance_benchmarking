@@ -75,17 +75,27 @@ docker compose build
 
 ## Workload A: Update heavy workload
 
-![](report_output/report_workloada_load.png)
-![](report_output/report_workloada_run.png)
+### Data load metrics
+![Load metrics](report_output/report_workloada_load.png)
+
+### Workload metrics
+![Run metrics](report_output/report_workloada_run.png)
 
 ## Workload B: Read mostly workload
 
-![](report_output/report_workloadb_load.png)
-![](report_output/report_workloadb_run.png)
+### Data load metrics
+![Load metrics](report_output/report_workloadb_load.png)
+
+### Workload metrics
+![Run metrics](report_output/report_workloadb_run.png)
 
 ## Workload C: Read only
-![](report_output/report_workloadc_load.png)
-![](report_output/report_workloadc_run.png)
+
+### Data load metrics
+![Load metrics](report_output/report_workloadc_load.png)
+
+### Workload metrics
+![Run metrics](report_output/report_workloadc_run.png)
 
 ## Clean-Up
 

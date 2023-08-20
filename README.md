@@ -73,6 +73,20 @@ docker compose build
 ## Analyze results
 ...
 
+## Workload A: Update heavy workload
+
+![](report_output/report_workloada_load.png)
+![](report_output/report_workloada_run.png)
+
+## Workload B: Read mostly workload
+
+![](report_output/report_workloadb_load.png)
+![](report_output/report_workloadb_run.png)
+
+## Workload C: Read only
+![](report_output/report_workloadc_load.png)
+![](report_output/report_workloadc_run.png)
+
 ## Clean-Up
 
 Remove images, volumes, etc.

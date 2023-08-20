@@ -1,0 +1,28 @@
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 22693
+[OVERALL], Throughput(ops/sec), 440.6645220993258
+[TOTAL_GCS_G1_Young_Generation], Count, 2
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 12
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.052879742651919096
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 2
+[TOTAL_GC_TIME], Time(ms), 12
+[TOTAL_GC_TIME_%], Time(%), 0.052879742651919096
+[CLEANUP], Operations, 2
+[CLEANUP], AverageLatency(us), 1267.0
+[CLEANUP], MinLatency(us), 231
+[CLEANUP], MaxLatency(us), 2303
+[CLEANUP], 95thPercentileLatency(us), 2303
+[CLEANUP], 99thPercentileLatency(us), 2303
+[INSERT], Operations, 10000
+[INSERT], AverageLatency(us), 4432.6823
+[INSERT], MinLatency(us), 1910
+[INSERT], MaxLatency(us), 38015
+[INSERT], 95thPercentileLatency(us), 6003
+[INSERT], 99thPercentileLatency(us), 7703
+[INSERT], Return=OK, 10000

@@ -1,0 +1,26 @@
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Using 1 shards
+[OVERALL], RunTime(ms), 10109
+[OVERALL], Throughput(ops/sec), 989.2175289346127
+[TOTAL_GCS_G1_Young_Generation], Count, 2
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 12
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.11870610347215352
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 2
+[TOTAL_GC_TIME], Time(ms), 12
+[TOTAL_GC_TIME_%], Time(%), 0.11870610347215352
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 504.0
+[CLEANUP], MinLatency(us), 504
+[CLEANUP], MaxLatency(us), 504
+[CLEANUP], 95thPercentileLatency(us), 504
+[CLEANUP], 99thPercentileLatency(us), 504
+[INSERT], Operations, 10000
+[INSERT], AverageLatency(us), 973.5543
+[INSERT], MinLatency(us), 564
+[INSERT], MaxLatency(us), 24895
+[INSERT], 95thPercentileLatency(us), 1190
+[INSERT], 99thPercentileLatency(us), 1420
+[INSERT], Return=OK, 10000

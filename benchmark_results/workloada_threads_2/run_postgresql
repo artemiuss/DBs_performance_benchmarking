@@ -1,0 +1,35 @@
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 2890
+[OVERALL], Throughput(ops/sec), 3460.2076124567475
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 8
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.27681660899653976
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 8
+[TOTAL_GC_TIME_%], Time(%), 0.27681660899653976
+[READ], Operations, 5056
+[READ], AverageLatency(us), 173.94818037974684
+[READ], MinLatency(us), 89
+[READ], MaxLatency(us), 17055
+[READ], 95thPercentileLatency(us), 324
+[READ], 99thPercentileLatency(us), 419
+[READ], Return=OK, 5056
+[CLEANUP], Operations, 2
+[CLEANUP], AverageLatency(us), 206.0
+[CLEANUP], MinLatency(us), 116
+[CLEANUP], MaxLatency(us), 296
+[CLEANUP], 95thPercentileLatency(us), 296
+[CLEANUP], 99thPercentileLatency(us), 296
+[UPDATE], Operations, 4944
+[UPDATE], AverageLatency(us), 866.962783171521
+[UPDATE], MinLatency(us), 530
+[UPDATE], MaxLatency(us), 18703
+[UPDATE], 95thPercentileLatency(us), 1176
+[UPDATE], 99thPercentileLatency(us), 1414
+[UPDATE], Return=OK, 4944

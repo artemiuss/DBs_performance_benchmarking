@@ -1,0 +1,2 @@
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Using 1 shards

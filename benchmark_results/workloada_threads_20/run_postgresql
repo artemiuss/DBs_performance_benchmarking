@@ -1,0 +1,71 @@
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 556
+[OVERALL], Throughput(ops/sec), 1798.5611510791366
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 10
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.7985611510791366
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 10
+[TOTAL_GC_TIME_%], Time(%), 1.7985611510791366
+[READ], Operations, 501
+[READ], AverageLatency(us), 1290.001996007984
+[READ], MinLatency(us), 186
+[READ], MaxLatency(us), 26591
+[READ], 95thPercentileLatency(us), 2977
+[READ], 99thPercentileLatency(us), 25679
+[READ], Return=OK, 501
+[CLEANUP], Operations, 20
+[CLEANUP], AverageLatency(us), 347.35
+[CLEANUP], MinLatency(us), 71
+[CLEANUP], MaxLatency(us), 2369
+[CLEANUP], 95thPercentileLatency(us), 2091
+[CLEANUP], 99thPercentileLatency(us), 2369
+[UPDATE], Operations, 499
+[UPDATE], AverageLatency(us), 2506.695390781563
+[UPDATE], MinLatency(us), 778
+[UPDATE], MaxLatency(us), 24751
+[UPDATE], 95thPercentileLatency(us), 5191
+[UPDATE], 99thPercentileLatency(us), 23951
+[UPDATE], Return=OK, 499

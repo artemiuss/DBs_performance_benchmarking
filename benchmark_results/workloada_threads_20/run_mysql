@@ -1,0 +1,71 @@
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 1043
+[OVERALL], Throughput(ops/sec), 958.7727708533077
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 8
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.7670182166826461
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 8
+[TOTAL_GC_TIME_%], Time(%), 0.7670182166826461
+[READ], Operations, 501
+[READ], AverageLatency(us), 3930.13373253493
+[READ], MinLatency(us), 579
+[READ], MaxLatency(us), 117503
+[READ], 95thPercentileLatency(us), 4791
+[READ], 99thPercentileLatency(us), 96703
+[READ], Return=OK, 501
+[CLEANUP], Operations, 20
+[CLEANUP], AverageLatency(us), 1855.15
+[CLEANUP], MinLatency(us), 257
+[CLEANUP], MaxLatency(us), 13375
+[CLEANUP], 95thPercentileLatency(us), 10335
+[CLEANUP], 99thPercentileLatency(us), 13375
+[UPDATE], Operations, 499
+[UPDATE], AverageLatency(us), 10480.531062124248
+[UPDATE], MinLatency(us), 2576
+[UPDATE], MaxLatency(us), 50719
+[UPDATE], 95thPercentileLatency(us), 18047
+[UPDATE], 99thPercentileLatency(us), 41311
+[UPDATE], Return=OK, 499

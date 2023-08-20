@@ -1,0 +1,44 @@
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Adding shard node URL: jdbc:postgresql://localhost:5433/test
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 688
+[OVERALL], Throughput(ops/sec), 1453.4883720930231
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 8
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 1.1627906976744187
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 8
+[TOTAL_GC_TIME_%], Time(%), 1.1627906976744187
+[CLEANUP], Operations, 10
+[CLEANUP], AverageLatency(us), 473.8
+[CLEANUP], MinLatency(us), 57
+[CLEANUP], MaxLatency(us), 2885
+[CLEANUP], 95thPercentileLatency(us), 2885
+[CLEANUP], 99thPercentileLatency(us), 2885
+[INSERT], Operations, 1000
+[INSERT], AverageLatency(us), 2606.196
+[INSERT], MinLatency(us), 807
+[INSERT], MaxLatency(us), 30303
+[INSERT], 95thPercentileLatency(us), 5191
+[INSERT], 99thPercentileLatency(us), 23935
+[INSERT], Return=OK, 1000

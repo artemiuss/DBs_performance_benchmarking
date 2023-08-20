@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import re
 from matplotlib import pyplot as plt
 
 db_list = [
@@ -13,7 +14,7 @@ workload_list = [
     {"name":"Workload C: Read only", "alias":"workloadc"}
 ]
 
-thread_list = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+thread_list = [1,2,3,4,5,6,7,8,9,10]
 
 for workload in workload_list:
     for stage in ["load", "run"]:
@@ -26,10 +27,11 @@ for workload in workload_list:
                 with open(f'benchmark_results/{workload["alias"]}_threads_{thread}/{stage}_{db["alias"]}', 'r') as file:
                     content = file.read()
 
-                throughput_list.append(10)
+                    match = re.search(r"Throughput\(ops\/sec\), (\d+\.\d+)", content)
+                    throughput_list.append(float(match.group(1)))
 
             plt.plot(thread_list, throughput_list, label = db["name"])
         plt.ylabel('Throughput, ops/sec')
         plt.legend()
         plt.savefig(f"report_output/{report_file_name}.png")
-
+        plt.clf()

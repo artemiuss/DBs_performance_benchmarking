@@ -10,9 +10,9 @@ The DBMSs were running in docker containers using official images. *So this is a
 The test was performed on the host with 8 CPU cores, 32GB RAM, SSD drive using Ubuntu 22.04.
 
 For this benchmark I've forked the [YCSB](https://github.com/brianfrankcooper/YCSB) tool by adding support for PostgreSQL (jsonb) and MySQL (binary json). YCSB settings used:
-- `recordcount=1000000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
-- `operationcount=1000000` -- the number of operations to perform in the workload
-- `threadcount=[1,2,3,4,5,6,7,8,9,10]` -- number of YCSB client threads. Alternatively this may be specified on the command line
+- `recordcount=10000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
+- `operationcount=10000` -- the number of operations to perform in the workload
+- `threadcount=[1,2,4,8,10,20,30,40,50,60,70,80,90,100]` -- number of YCSB client threads. Alternatively this may be specified on the command line
 - `workload` -- workload class:
   - Workload A: Update heavy workload
   - Workload B: Read mostly workload

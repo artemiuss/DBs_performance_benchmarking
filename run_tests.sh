@@ -2,10 +2,10 @@
 
 set -eu
 
-RECORDCOUNT=10000
-OPERATIONCOUNT=10000
+RECORDCOUNT=1000
+OPERATIONCOUNT=1000
 declare -a WORKLOADS=("workloada" "workloadb" "workloadc")
-declare -a THREADS=(1 2 4 8 10 20 30 40 50 60 70 80 90 100)
+declare -a THREADS=(1 2 4 8 16 32 64)
 YCSB_HOME="YCSB"
 
 for WORKLOAD in "${WORKLOADS[@]}"

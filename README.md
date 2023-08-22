@@ -12,7 +12,7 @@ The test was performed on the host with 4 CPU cores, 8GB RAM, SSD drive using RH
 For this benchmark I've forked the [YCSB](https://github.com/brianfrankcooper/YCSB) tool by adding support for PostgreSQL (jsonb) and MySQL (binary json). YCSB settings used:
 - `recordcount=10000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
 - `operationcount=10000` -- the number of operations to perform in the workload
-- `threadcount=[1,2,4,8,10,20,30,40,50,60,70,80,90,100]` -- number of YCSB client threads. Alternatively this may be specified on the command line
+- `threadcount=[1,2,4,8,16,32,64]` -- number of YCSB client threads. Alternatively this may be specified on the command line
 - `workload` -- workload class:
   - Workload A: Update heavy workload
   - Workload B: Read mostly workload

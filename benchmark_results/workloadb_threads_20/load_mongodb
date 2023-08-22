@@ -1,0 +1,25 @@
+mongo client connection created with mongodb://root:test@localhost:27018
+[OVERALL], RunTime(ms), 8631
+[OVERALL], Throughput(ops/sec), 11586.142973004287
+[TOTAL_GCS_G1_Young_Generation], Count, 38
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 62
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.7183408643262658
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 38
+[TOTAL_GC_TIME], Time(ms), 62
+[TOTAL_GC_TIME_%], Time(%), 0.7183408643262658
+[CLEANUP], Operations, 20
+[CLEANUP], AverageLatency(us), 1105.75
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 22095
+[CLEANUP], 95thPercentileLatency(us), 10
+[CLEANUP], 99thPercentileLatency(us), 22095
+[INSERT], Operations, 100000
+[INSERT], AverageLatency(us), 1638.7545
+[INSERT], MinLatency(us), 202
+[INSERT], MaxLatency(us), 1772543
+[INSERT], 95thPercentileLatency(us), 2761
+[INSERT], 99thPercentileLatency(us), 4759
+[INSERT], Return=OK, 100000

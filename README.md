@@ -46,7 +46,6 @@ Data structures used in the benchmark:
     db.createCollection('usertable')
     ```
 
-
 ## Setup testing env
 
 The testing DB instances have been defined in the `docker-compose.yml` file.
@@ -55,7 +54,6 @@ To prepare the testing env run the following command:
 ```sh
 pip install -r requirements.txt
 ./setup_tests.py
-docker compose build
 ```
 
 ## Prepare and describe testing scenarios

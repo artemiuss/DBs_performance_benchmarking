@@ -18,6 +18,16 @@ Adding shard node URL: jdbc:mysql://localhost:3307/test
 Adding shard node URL: jdbc:mysql://localhost:3307/test
 Adding shard node URL: jdbc:mysql://localhost:3307/test
 Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
 Using 1 shards
 Using 1 shards
 Using 1 shards
@@ -38,27 +48,37 @@ Using 1 shards
 Using 1 shards
 Using 1 shards
 Using 1 shards
-[OVERALL], RunTime(ms), 276361
-[OVERALL], Throughput(ops/sec), 361.8455570793274
-[TOTAL_GCS_G1_Young_Generation], Count, 111
-[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 166
-[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.060066362475168354
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 206521
+[OVERALL], Throughput(ops/sec), 484.2122592859806
+[TOTAL_GCS_G1_Young_Generation], Count, 112
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 150
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.0726318388928971
 [TOTAL_GCS_G1_Old_Generation], Count, 0
 [TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
 [TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
-[TOTAL_GCs], Count, 111
-[TOTAL_GC_TIME], Time(ms), 166
-[TOTAL_GC_TIME_%], Time(%), 0.060066362475168354
-[CLEANUP], Operations, 20
-[CLEANUP], AverageLatency(us), 1571.8
-[CLEANUP], MinLatency(us), 225
-[CLEANUP], MaxLatency(us), 8647
-[CLEANUP], 95thPercentileLatency(us), 8615
-[CLEANUP], 99thPercentileLatency(us), 8647
+[TOTAL_GCs], Count, 112
+[TOTAL_GC_TIME], Time(ms), 150
+[TOTAL_GC_TIME_%], Time(%), 0.0726318388928971
+[CLEANUP], Operations, 30
+[CLEANUP], AverageLatency(us), 489.1666666666667
+[CLEANUP], MinLatency(us), 218
+[CLEANUP], MaxLatency(us), 2257
+[CLEANUP], 95thPercentileLatency(us), 1098
+[CLEANUP], 99thPercentileLatency(us), 2257
 [INSERT], Operations, 100000
-[INSERT], AverageLatency(us), 54921.13952
-[INSERT], MinLatency(us), 16928
-[INSERT], MaxLatency(us), 710143
-[INSERT], 95thPercentileLatency(us), 98111
-[INSERT], 99thPercentileLatency(us), 159871
+[INSERT], AverageLatency(us), 61161.02544
+[INSERT], MinLatency(us), 16384
+[INSERT], MaxLatency(us), 1857535
+[INSERT], 95thPercentileLatency(us), 112447
+[INSERT], 99thPercentileLatency(us), 205439
 [INSERT], Return=OK, 100000

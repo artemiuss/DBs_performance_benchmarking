@@ -46,7 +46,7 @@ Data structures used in the benchmark:
     db.createCollection('usertable')
     ```
 
-## Setup testing env
+## Setup Testing Environment
 
 The testing DB instances have been defined in the `docker-compose.yml` file.
 
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ./setup_tests.py
 ```
 
-## Testing scenarios
+## Testing Scenarios
 
 YCSB includes a set of core workloads that define a basic benchmark for cloud systems. The following workloads were used in this benchmark:
 - Workload A: Update heavy workload

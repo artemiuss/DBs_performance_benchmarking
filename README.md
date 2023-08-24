@@ -57,10 +57,11 @@ pip install -r requirements.txt
 ```
 
 ## Testing scenarios
-...
-  - Workload A: Update heavy workload
-  - Workload B: Read mostly workload
-  - Workload C: Read only
+
+YCSB includes a set of core workloads that define a basic benchmark for cloud systems. The following workloads were used in this benchmark:
+- Workload A: Update heavy workload
+- Workload B: Read mostly workload
+- Workload C: Read only
 
 ### Workload A: Update heavy workload
 

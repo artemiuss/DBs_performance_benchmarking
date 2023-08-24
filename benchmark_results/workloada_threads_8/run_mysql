@@ -1,0 +1,47 @@
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Adding shard node URL: jdbc:mysql://localhost:3307/test
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+Using 1 shards
+[OVERALL], RunTime(ms), 3994
+[OVERALL], Throughput(ops/sec), 250.37556334501753
+[TOTAL_GCS_G1_Young_Generation], Count, 2
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 16
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.40060090135202797
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 2
+[TOTAL_GC_TIME], Time(ms), 16
+[TOTAL_GC_TIME_%], Time(%), 0.40060090135202797
+[READ], Operations, 479
+[READ], AverageLatency(us), 1940.7891440501044
+[READ], MinLatency(us), 433
+[READ], MaxLatency(us), 105791
+[READ], 95thPercentileLatency(us), 2777
+[READ], 99thPercentileLatency(us), 5283
+[READ], Return=OK, 479
+[CLEANUP], Operations, 8
+[CLEANUP], AverageLatency(us), 818.125
+[CLEANUP], MinLatency(us), 332
+[CLEANUP], MaxLatency(us), 3241
+[CLEANUP], 95thPercentileLatency(us), 3241
+[CLEANUP], 99thPercentileLatency(us), 3241
+[UPDATE], Operations, 521
+[UPDATE], AverageLatency(us), 44445.735124760075
+[UPDATE], MinLatency(us), 16144
+[UPDATE], MaxLatency(us), 118655
+[UPDATE], 95thPercentileLatency(us), 72703
+[UPDATE], 99thPercentileLatency(us), 99007
+[UPDATE], Return=OK, 521

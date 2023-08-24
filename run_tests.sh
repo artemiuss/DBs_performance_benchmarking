@@ -5,7 +5,7 @@ set -eu
 RECORDCOUNT=1000
 OPERATIONCOUNT=1000
 declare -a WORKLOADS=("workloada" "workloadb" "workloadc")
-declare -a THREADS=(1 2 4 8 16 32 64)
+declare -a THREADS=(1 2 3 4 5 6 7 8)
 YCSB_HOME="YCSB"
 
 for WORKLOAD in "${WORKLOADS[@]}"
@@ -74,7 +74,7 @@ do
         cd ..
 
         # stop containers
-        docker compose down
+        docker compose down -v
         sleep 1
     done
 done

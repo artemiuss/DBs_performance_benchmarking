@@ -14,7 +14,7 @@ workload_list = [
     {"name":"Workload C: Read only", "alias":"workloadc"}
 ]
 
-thread_list = [1,2,4,8,16,32,64]
+thread_list = [1,2,3,4,5,6,7,8]
 
 for workload in workload_list:
     for stage in ["load", "run"]:

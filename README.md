@@ -10,9 +10,9 @@ The DBMSs were running in docker containers using official images. *So this is a
 The test was performed on the host with 4 CPU cores, 8GB RAM, SSD drive using RHEL 9.2.
 
 For this benchmark I've forked the [YCSB](https://github.com/brianfrankcooper/YCSB) tool by adding support for PostgreSQL (jsonb) and MySQL (binary json). YCSB settings used:
-- `recordcount=10000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
-- `operationcount=10000` -- the number of operations to perform in the workload
-- `threadcount=[1,2,4,8,16,32,64]` -- number of YCSB client threads. Alternatively this may be specified on the command line
+- `recordcount=1000` -- the number of records in the dataset at the start of the workload. used when loading for all workloads
+- `operationcount=1000` -- the number of operations to perform in the workload
+- `threadcount=[1,2,3,4,5,6,7,8]` -- number of YCSB client threads. Alternatively this may be specified on the command line
 - `workload` -- workload class:
   - Workload A: Update heavy workload
   - Workload B: Read mostly workload
@@ -56,11 +56,24 @@ pip install -r requirements.txt
 ./setup_tests.py
 ```
 
-## Prepare and describe testing scenarios
+## Testing scenarios
 ...
+  - Workload A: Update heavy workload
+  - Workload B: Read mostly workload
+  - Workload C: Read only
 
+### Workload A: Update heavy workload
 
-## Perform benchmarks in different configurations (default/majority read-write resp, …)
+This workload has a mix of 50/50 reads and writes. An application example is a session store recording recent actions. Updates in this workload do not presume you read the original record first. The assumption is all update writes contain fields for a record that already exists; oftentimes writing only a subset of the total fields for that record. Some data stores need to read the underlying record in order to reconcile what the final record should look like, but not all do.
+
+### Workload B: Read mostly workload
+This workload has a 95/5 reads/write mix. Application example: photo tagging; add a tag is an update, but most operations are to read tags. As with Workload A, these writes do not presume you read the original record before writing to it.
+
+### Workload C: Read only
+
+This workload is 100% read. Application example: user profile cache, where profiles are constructed elsewhere (e.g., Hadoop).
+
+## Perform benchmarks in different configurations
 ...
 
 ### Run tests

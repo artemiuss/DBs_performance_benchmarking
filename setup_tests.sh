@@ -5,6 +5,9 @@ git clone https://github.com/artemiuss/YCSB
 cd YCSB
 
 # build ycsb from source
+mvn -pl site.ycsb:core -am clean package
+mvn -pl site.ycsb:binding-parent -am clean package
+mvn -pl site.ycsb:distribution -am clean package
 mvn -pl site.ycsb:mongodb-binding -am clean package
 mvn -pl site.ycsb:pgjsonb-binding -am clean package
 mvn -pl site.ycsb:mysqljson-binding -am clean package
@@ -17,3 +20,4 @@ rm -r mysql-connector-j-8.1.0.tar.gz mysql-connector-j-8.1.0
 
 # get postgresql jdbc driver
 curl -O --location https://jdbc.postgresql.org/download/postgresql-42.6.0.jar
+

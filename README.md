@@ -88,26 +88,26 @@ This workload is 100% read. Application example: user profile cache, where profi
 ## Workload A: Update heavy workload
 
 ### Data load metrics
-![Load metrics](report_output/report_workloada_load.png)
+![Load metrics](default_db_conf/report_output/report_workloada_load.png)
 
 ### Workload metrics
-![Run metrics](report_output/report_workloada_run.png)
+![Run metrics](default_db_conf/report_output/report_workloada_run.png)
 
 ## Workload B: Read mostly workload
 
 ### Data load metrics
-![Load metrics](report_output/report_workloadb_load.png)
+![Load metrics](default_db_conf/report_output/report_workloadb_load.png)
 
 ### Workload metrics
-![Run metrics](report_output/report_workloadb_run.png)
+![Run metrics](default_db_conf/report_output/report_workloadb_run.png)
 
 ## Workload C: Read only
 
 ### Data load metrics
-![Load metrics](report_output/report_workloadc_load.png)
+![Load metrics](default_db_conf/report_output/report_workloadc_load.png)
 
 ### Workload metrics
-![Run metrics](report_output/report_workloadc_run.png)
+![Run metrics](default_db_conf/report_output/report_workloadc_run.png)
 
 ## Clean-Up
 

@@ -75,7 +75,21 @@ This workload has a 95/5 reads/write mix. Application example: photo tagging; ad
 This workload is 100% read. Application example: user profile cache, where profiles are constructed elsewhere (e.g., Hadoop).
 
 ## Perform benchmarks in different configurations
-...
+
+An attempt was made to change the DBMS configuration as follows:
+
+PostgreSQL:
+- shared_buffers = 2GB
+- effective_cache_size = 8GB
+- max_wal_size = 4GB
+- checkpoint_timeout = 30min
+- max_parallel_workers_per_gather = 0
+
+MySQL:
+- innodb_buffer_pool_size=4GB
+- innodb_log_file_size=4GB
+
+However, changing these parameters had no effect.
 
 ### Run tests
 ```sh

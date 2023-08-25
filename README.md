@@ -56,6 +56,11 @@ pip install -r requirements.txt
 ./setup_tests.py
 ```
 
+## Run tests
+```sh
+./run_tests.sh
+```
+
 ## Testing Scenarios
 
 YCSB includes a set of core workloads that define a basic benchmark for cloud systems. The following workloads were used in this benchmark:
@@ -91,10 +96,7 @@ MySQL:
 
 However, changing these parameters had no effect.
 
-### Run tests
-```sh
-./run_tests.sh
-```
+
 
 ## Analyze results
 ...

@@ -96,8 +96,6 @@ MySQL:
 
 However, changing these parameters had no effect.
 
-
-
 ## Analyze results
 ...
 

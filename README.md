@@ -102,26 +102,26 @@ However, changing these parameters had no effect.
 ## Workload A: Update heavy workload
 
 ### Data load metrics
-![Load metrics](default_db_conf/report_output/report_workloada_load.png)
+![Load metrics](indexed/report_output/report_workloada_load.png)
 
 ### Workload metrics
-![Run metrics](default_db_conf/report_output/report_workloada_run.png)
+![Run metrics](indexed/report_output/report_workloada_run.png)
 
 ## Workload B: Read mostly workload
 
 ### Data load metrics
-![Load metrics](default_db_conf/report_output/report_workloadb_load.png)
+![Load metrics](indexed/report_output/report_workloadb_load.png)
 
 ### Workload metrics
-![Run metrics](default_db_conf/report_output/report_workloadb_run.png)
+![Run metrics](indexed/report_output/report_workloadb_run.png)
 
 ## Workload C: Read only
 
 ### Data load metrics
-![Load metrics](default_db_conf/report_output/report_workloadc_load.png)
+![Load metrics](indexed/report_output/report_workloadc_load.png)
 
 ### Workload metrics
-![Run metrics](default_db_conf/report_output/report_workloadc_run.png)
+![Run metrics](indexed/report_output/report_workloadc_run.png)
 
 ## Clean-Up
 

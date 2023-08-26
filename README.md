@@ -158,6 +158,11 @@ However, changing these parameters had no effect.
 #### Workload metrics
 ![Run metrics](results/indexed/report_output/report_workloadc_run.png)
 
+
+## Conclusions
+
+- Creating an index for JSON in PostgreSQL and MySQL significantly improves both read speed and performance of update operations
+
 ## Clean-Up
 
 Remove images, volumes, etc.

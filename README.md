@@ -105,9 +105,7 @@ MySQL:
 
 However, changing these parameters had no effect.
 
-## Results
-
-## Non-Indexed JSON
+## Results: Non-Indexed JSON
 
 ### Workload A: Update heavy workload
 
@@ -134,7 +132,7 @@ However, changing these parameters had no effect.
 ![Run metrics](results/non-indexed/report_output/report_workloadc_run.png)
 
 
-## Indexed JSON
+## Results: Indexed JSON
 
 ### Workload A: Update heavy workload
 

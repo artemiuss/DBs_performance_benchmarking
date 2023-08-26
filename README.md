@@ -107,7 +107,7 @@ However, changing these parameters had no effect.
 
 ## Results
 
-## Non-Indexed
+## Non-Indexed JSON
 
 ### Workload A: Update heavy workload
 
@@ -134,7 +134,7 @@ However, changing these parameters had no effect.
 ![Run metrics](results/non-indexed/report_output/report_workloadc_run.png)
 
 
-## Indexed
+## Indexed JSON
 
 ### Workload A: Update heavy workload
 

@@ -55,7 +55,7 @@ Data structures used in the benchmark:
     db.createCollection('usertable')
     ```
 
-## Setup Testing Environment
+## Testing Environment
 
 The testing DB instances have been defined in the `docker-compose.yml` file.
 
@@ -107,28 +107,57 @@ However, changing these parameters had no effect.
 
 ## Results
 
-## Workload A: Update heavy workload
+## Non-Indexed
 
-### Data load metrics
+### Workload A: Update heavy workload
+
+#### Data load metrics
+![Load metrics](results/non-indexed/report_output/report_workloada_load.png)
+
+#### Workload metrics
+![Run metrics](results/non-indexed/report_output/report_workloada_run.png)
+
+### Workload B: Read mostly workload
+
+#### Data load metrics
+![Load metrics](results/non-indexed/report_output/report_workloadb_load.png)
+
+#### Workload metrics
+![Run metrics](results/non-indexed/report_output/report_workloadb_run.png)
+
+### Workload C: Read only
+
+#### Data load metrics
+![Load metrics](results/non-indexed/report_output/report_workloadc_load.png)
+
+#### Workload metrics
+![Run metrics](results/non-indexed/report_output/report_workloadc_run.png)
+
+
+## Indexed
+
+### Workload A: Update heavy workload
+
+#### Data load metrics
 ![Load metrics](results/indexed/report_output/report_workloada_load.png)
 
-### Workload metrics
+#### Workload metrics
 ![Run metrics](results/indexed/report_output/report_workloada_run.png)
 
-## Workload B: Read mostly workload
+### Workload B: Read mostly workload
 
-### Data load metrics
+#### Data load metrics
 ![Load metrics](results/indexed/report_output/report_workloadb_load.png)
 
-### Workload metrics
+#### Workload metrics
 ![Run metrics](results/indexed/report_output/report_workloadb_run.png)
 
-## Workload C: Read only
+### Workload C: Read only
 
-### Data load metrics
+#### Data load metrics
 ![Load metrics](results/indexed/report_output/report_workloadc_load.png)
 
-### Workload metrics
+#### Workload metrics
 ![Run metrics](results/indexed/report_output/report_workloadc_run.png)
 
 ## Clean-Up

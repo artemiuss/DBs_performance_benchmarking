@@ -22,22 +22,31 @@ Data structures used in the benchmark:
 
 - PostgreSQL
 
-    A table with single `JSONB` column with single path index created using regular functional index.
-    ```sql
-    CREATE TABLE IF NOT EXISTS usertable(data JSONB);
-    CREATE UNIQUE INDEX IF NOT EXISTS usertable_data_idx ON usertable ((data->>'YCSB_KEY'));
-    ```
-    It has been decided to uses the JSONB since:
+    - A table with single `JSONB` column
+       ```sql
+       CREATE TABLE IF NOT EXISTS usertable(data JSONB);
+       ```
+    - A table with single `JSONB` column with single path index created using regular functional index.
+       ```sql
+       CREATE TABLE IF NOT EXISTS usertable(data JSONB);
+       CREATE UNIQUE INDEX IF NOT EXISTS usertable_data_idx ON usertable ((data->>'YCSB_KEY'));
+       ```
+
+    Note: It has been decided to uses the JSONB since:
     > The json and jsonb data types accept almost identical sets of values as input. The major practical difference is one of efficiency. The json data type stores an exact copy of the input text, which processing functions must reparse on each execution; while jsonb data is stored in a decomposed binary format that makes it slightly slower to input due to added conversion overhead, but significantly faster to process, since no reparsing is needed. jsonb also supports indexing, which can be a significant advantage.
 
 - MySQL
 
-    A table with single `JSON` column with virtual column and index on it (MySQL does not suuport indexing binary json).
-    ```sql
-    CREATE TABLE test.usertable (
+    - A table with single `JSON` column
+      ```sql
+      CREATE TABLE test.usertable (data json);
+      ```
+    - A table with single `JSON` column with virtual column and index on it (MySQL does not support indexing binary json).
+      ```sql
+      CREATE TABLE test.usertable (
         data json,
         ycsb_key varchar(255) GENERATED ALWAYS AS (JSON_EXTRACT(data, '$.YCSB_KEY')) STORED PRIMARY KEY);
-    ```
+      ```
 
 - MongoDB
 
@@ -96,8 +105,7 @@ MySQL:
 
 However, changing these parameters had no effect.
 
-## Analyze results
-...
+## Results
 
 ## Workload A: Update heavy workload
 

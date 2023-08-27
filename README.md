@@ -161,6 +161,10 @@ However, changing these parameters had no effect.
 
 ## Conclusions
 
+- Data insertion: MongoDB outperforms PostgreSQL for a small number of concurrent connections, but PostgreSQL becomes faster as the number of concurrent connections grows
+
+
+- In all tests MySQL is significantly inferior in performance to its rivals
 - Creating an index for JSON in PostgreSQL and MySQL significantly improves both read speed and performance of update operations
 
 ## Clean-Up
